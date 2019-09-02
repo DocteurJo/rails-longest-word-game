@@ -1,0 +1,16 @@
+<h2>New game</h2>
+<% @random_grid.each do |letter|%>
+<div id = "letter_box">
+  <%= letter %>
+</div>
+<% end %>
+
+<br><br>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="word_input"> What is the longest word you can find?</label>
+  <br>
+  <input type="text" name="answer" id="word_input">
+  <input type="submit">
+</form>
